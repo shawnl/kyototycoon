@@ -1,0 +1,2 @@
+  version=3
+  http://fallabs.com/kyototycoon/pkg/ kyototycoon-(.+)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz|lzma)))

@@ -1,0 +1,17 @@
+*.o
+Makefile
+ktremotemgr
+ktremotetest
+ktserver
+kttimedmgr
+kttimedtest
+ktutilmgr
+ktutilserv
+ktutiltest
+config.*
+kyototycoon.pc
+libkyototycoon.so*
+libkyototycoon.a
+ktplugdbvoid.so
+ktplugservmemc.so
+configure.orig

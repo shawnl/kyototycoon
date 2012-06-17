@@ -1,0 +1,4 @@
+usr/include/*.h
+usr/lib/*/libkyototycoon.so
+usr/lib/*/libkyototycoon.a
+usr/lib/*/pkgconfig/kyototycoon.pc
