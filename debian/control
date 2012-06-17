@@ -44,7 +44,7 @@ Architecture: any
 Priority: extra
 Depends: libkyototycoon2 (= ${binary:Version}), ${misc:Depends}
 Multi-Arch: same
-Description: Handy cache/storage server - debugging symbols
+Description: Handy cache/storage server - library debugging symbols
  Kyoto Tycoon is a lightweight database server with auto expiration
  mechanism, which is useful to handle cache data and persistent data
  of various applications. Kyoto Tycoon is also a package of network
@@ -61,29 +61,9 @@ Description: Handy cache/storage server - debugging symbols
 Package: kyototycoon
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: kyototycoon-doc
+Suggests: kyototycoon-doc
 Multi-Arch: foreign
 Description: Handy cache/storage server
- Kyoto Tycoon is a lightweight database server with auto expiration
- mechanism, which is useful to handle cache data and persistent data
- of various applications. Kyoto Tycoon is also a package of network
- interface to the DBM called Kyoto Cabinet. Though the DBM has high
- performance and high concurrency, you might bother in case that
- multiple processes share the same database, or remote processes
- access the database. Thus, Kyoto Tycoon is provided for concurrent
- and remote connections to Kyoto Cabinet. Kyoto Tycoon is composed
- of the server process managing multiple databases and its access
- library for client applications.
- .
- This package contains the server, and the test tools.
-
-Package: kyototycoon-doc
-Section: doc
-Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: libkyototycoon-dev
-Multi-Arch: foreign
-Description: Handy cache/storage server - docs
  Kyoto Tycoon is a lightweight database server with auto expiration
  mechanism, which is useful to handle cache data and persistent data
  of various applications. Kyoto Tycoon is also a package of network
@@ -107,10 +87,45 @@ Description: Handy cache/storage server - docs
  embed Lua, a lightweight script language so that you can define
  arbitrary operations of the database.
  .
- The server program of Kyoto Tycoon is written in the C++ language.
- It is available on platforms which have API conforming to C++03
- with the TR1 library extensions. Kyoto Tycoon is a free software
- licensed under the GNU General Public License.
+ This package contains the server, and the test tools.
+
+Package: kyototycoon-dbg
+Section: debug
+Architecture: any
+Depends: kyototycoon (= ${binary:Version}), ${misc:Depends}
+Recommends: libkyototycoon2-dbg
+Multi-Arch: foreign
+Priority: extra
+Description: Handy cache/storage server - debugging symbols
+ Kyoto Tycoon is a lightweight database server with auto expiration
+ mechanism, which is useful to handle cache data and persistent data
+ of various applications. Kyoto Tycoon is also a package of network
+ interface to the DBM called Kyoto Cabinet. Though the DBM has high
+ performance and high concurrency, you might bother in case that
+ multiple processes share the same database, or remote processes
+ access the database. Thus, Kyoto Tycoon is provided for concurrent
+ and remote connections to Kyoto Cabinet. Kyoto Tycoon is composed
+ of the server process managing multiple databases and its access
+ library for client applications.
+ .
+ This package contains debugging symbols to the server and test tools.
+
+Package: kyototycoon-doc
+Section: doc
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: libkyototycoon-dev
+Description: Handy cache/storage server - docs
+ Kyoto Tycoon is a lightweight database server with auto expiration
+ mechanism, which is useful to handle cache data and persistent data
+ of various applications. Kyoto Tycoon is also a package of network
+ interface to the DBM called Kyoto Cabinet. Though the DBM has high
+ performance and high concurrency, you might bother in case that
+ multiple processes share the same database, or remote processes
+ access the database. Thus, Kyoto Tycoon is provided for concurrent
+ and remote connections to Kyoto Cabinet. Kyoto Tycoon is composed
+ of the server process managing multiple databases and its access
+ library for client applications.
  .
  This package contains the documentation.
 
