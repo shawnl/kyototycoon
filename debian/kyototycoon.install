@@ -1,2 +1,4 @@
 usr/bin/*
+usr/lib/*/ktplugservmemc.so
+usr/lib/*/ktplugdbvoid.so
 
