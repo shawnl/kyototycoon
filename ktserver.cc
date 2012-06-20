@@ -752,7 +752,7 @@ class Worker : public kt::RPCServer::Worker {
                     std::map<std::string, std::string>& outmap) {
     uint32_t thid = sess->thread_id();
     if (!scrprocs_) {
-      set_message(outmap, "ERROR", "the scripting extention is disabled");
+      set_message(outmap, "ERROR", "the scripting extension is disabled");
       return kt::RPCClient::RVENOIMPL;
     }
     ScriptProcessor* scrproc = scrprocs_ + thid;
