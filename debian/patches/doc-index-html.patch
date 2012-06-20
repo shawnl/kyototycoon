@@ -1,3 +1,5 @@
+fix docs to not require index.html functionality
+
 diff --git a/doc/index.html b/doc/index.html
 index 63be36e..c72437d 100644
 --- a/doc/index.html
