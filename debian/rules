@@ -6,9 +6,6 @@ override_dh_auto_configure:
 --enable-lua \
 --prefix=/usr
 
-# Uncomment this while developig to disable lengthy tests
-#override_dh_auto_test:
-
 override_dh_auto_install:
 	$(MAKE) DESTDIR=$$(pwd)/debian/tmp prefix=/usr install
 
@@ -19,6 +16,8 @@ override_dh_strip:
 
 override_dh_installdocs:
 	dh_installdocs --link-doc=libkyototycoon2
+	# That this is even needed is a bug in debhelper IMHO
+	rmdir $$(pwd)/debian/kyototycoon-doc/usr/share/doc/libkyototycoon2
 
 override_dh_installchangelogs:
 	dh_installchangelogs ChangeLog
