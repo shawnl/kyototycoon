@@ -16,8 +16,8 @@ override_dh_strip:
 
 override_dh_installdocs:
 	dh_installdocs --link-doc=libkyototycoon2
-	# That this is even needed is a bug in debhelper IMHO
-	rmdir $$(pwd)/debian/kyototycoon-doc/usr/share/doc/libkyototycoon2
+	# debhelper sometimes leaves this empty folder
+	rm -rf $$(pwd)/debian/kyototycoon-doc/usr/share/doc/libkyototycoon2
 
 override_dh_installchangelogs:
 	dh_installchangelogs ChangeLog
