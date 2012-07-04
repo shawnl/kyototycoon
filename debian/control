@@ -115,7 +115,7 @@ Section: doc
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: libkyototycoon-dev
-Description: Handy cache/storage server - docs
+Description: Handy cache/storage server - documentation
  Kyoto Tycoon is a lightweight database server with auto expiration
  mechanism, which is useful to handle cache data and persistent data
  of various applications. Kyoto Tycoon is also a package of network
