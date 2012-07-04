@@ -1,0 +1,36 @@
+From: Shawn Landden <shawnlandden@gmail.com>
+Date: Tue, 3 Jul 2012 12:54:54 -0700
+Subject: use --as-needed on GNU/kFreeBSD as well as Linux
+
+---
+ configure    |    2 +-
+ configure.in |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/configure b/configure
+index 9f88474..d1318c6 100755
+--- a/configure
++++ b/configure
+@@ -4533,7 +4533,7 @@ then
+ fi
+ 
+ # As-needed linking
+-if uname | grep Linux >config.tmp
++if uname -o | egrep "GNU/Linux|GNU/kFreeBSD" >config.tmp
+ then
+   MYLDFLAGS="$MYLDFLAGS -Wl,-rpath-link,.:/usr/local/lib:$MYLDLIBPATH"
+   MYLDFLAGS="$MYLDFLAGS -Wl,--as-needed"
+diff --git a/configure.in b/configure.in
+index c11de95..5ec34bf 100644
+--- a/configure.in
++++ b/configure.in
+@@ -265,7 +265,7 @@ then
+ fi
+ 
+ # As-needed linking
+-if uname | grep Linux >config.tmp
++if uname -o | egrep "GNU/Linux|GNU/kFreeBSD" >config.tmp
+ then
+   MYLDFLAGS="$MYLDFLAGS -Wl,-rpath-link,.:/usr/local/lib:$MYLDLIBPATH"
+   MYLDFLAGS="$MYLDFLAGS -Wl,--as-needed"
+-- 
