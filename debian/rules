@@ -30,5 +30,8 @@ override_dh_installchangelogs:
 override_dh_builddeb:
 	dh_builddeb -- -Zxz -z2
 
+override_dh_makeshlibs:
+	dh_makeshlibs -V
+
 %:
 	dh $@
