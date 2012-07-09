@@ -33,6 +33,11 @@
 #define _SYS_FREEBSD_
 #define _KT_OSNAME     "FreeBSD"
 
+#elif defined(__FreeBSD_kernel__) && defined(__GLIBC__)
+
+#define _SYS_GNUKFREEBSD_
+#define _KT_OSNAME     "GNU/kFreeBSD"
+
 #elif defined(__NetBSD__)
 
 #define _SYS_NETBSD_
@@ -97,7 +102,7 @@
 #if ! defined(_MYNOEVENT)
 #if defined(_SYS_LINUX_)
 #define _KT_EVENT_EPOLL
-#elif defined(_SYS_FREEBSD_) || defined(_SYS_MACOSX_)
+#elif defined(_SYS_FREEBSD_) || defined(_SYS_MACOSX_) || defined(__FreeBSD_kernel__)
 #define _KT_EVENT_KQUEUE
 #endif
 #endif
