@@ -1,7 +1,9 @@
+From 52aea939f964872535bd11ca5c21bd78c4b2d5bf Mon Sep 17 00:00:00 2001
 From: Shawn Landden <shawnlandden@gmail.com>
 Date: Wed, 4 Jul 2012 09:22:11 -0700
-Subject: fix docs to not require index.html functionality
+Subject: [PATCH 1/4] doc: index.html
 
+fix docs to not require index.html functionality
 ---
  doc/index.html |    4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
@@ -22,3 +24,5 @@ index 63be36e..c72437d 100644
  
  <hr />
 -- 
+1.7.9.5
+

@@ -1,3 +1,4 @@
-fix-docs-to-not-require-index.html-functionality.patch
-disable-march-native-don-t-build-64-bit-always-when-.patch
-use-as-needed-on-GNU-kFreeBSD-as-well-as-Linux.patch
+doc-index.html.patch
+configure-disable-march-native-agressive-m64.patch
+configure-GNU-kFreeBSD-and-disable-rpath.patch
+kfreebsd.patch

@@ -1,8 +1,10 @@
+From a142d50b66c29f20662a6864a847fecea62e1804 Mon Sep 17 00:00:00 2001
 From: Shawn Landden <shawnlandden@gmail.com>
 Date: Wed, 4 Jul 2012 09:23:16 -0700
-Subject: =?UTF-8?q?disable=20march=3Dnative,=20don't=20build=2064-bit=20alwa?=
- =?UTF-8?q?ys=20when=20-m64=20is=0A=20available?=
+Subject: [PATCH 2/4] configure: disable march native, agressive -m64
 
+disable march=native, don't build 64-bit always when -m64 is
+ available
 ---
  configure    |   22 ----------------------
  configure.in |   22 ----------------------
@@ -75,3 +77,5 @@ index 9732529..c11de95 100644
  if printf 'main() {}' | $CC -xc \
    -Wno-unused-but-set-variable -Wno-unused-but-set-parameter -o config.tmp - >config.tmp 2>&1
 -- 
+1.7.9.5
+
