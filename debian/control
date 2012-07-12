@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Shawn Landden <shawnlandden@gmail.com>
 Build-Depends: debhelper (>= 9),
  dpkg-dev (>= 1.16.1),
+ kyotocabinet-dev,
  automake,
  libtool (>= 2.2),
  liblua5.1-0-dev,
