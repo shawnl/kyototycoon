@@ -1,12 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Contact: Mikio Hirabayashi <mikio@fallabs.com>
 Source: http://fallabs.com/kyototycoon/
 
 Files: *
-Copyright: Copyright © 2009-2011 FAL Labs <info@fallabs.com>
+Copyright: © 2009-2011 FAL Labs <info@fallabs.com>
 License: GPL-3+
 
 Files: debian/*
-Copyright: Copyright © 2012 Shawn Landden <shawnlandden@gmail.com>
+Copyright: © 2012 Shawn Landden <shawnlandden@gmail.com>
 License: GPL-3+
 
 License: GPL-3+
@@ -22,9 +23,5 @@ License: GPL-3+
  PURPOSE.  See the GNU General Public License for more
  details.
  .
- You should have received a copy of the GNU General Public
- License along with this program. If not, see <http://www.gnu.org/licenses/>.
- .
- On Debian GNU/Linux systems, the complete text of the GNU General
+ On Debian systems, the complete text of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-3'.
-
