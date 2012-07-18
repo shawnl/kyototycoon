@@ -1,7 +1,7 @@
-From 557e245f8ea60540f74c24ff39d3ab53dbe7f9ba Mon Sep 17 00:00:00 2001
+From 17f831747cd99f817ee9a996fe209db9c7335920 Mon Sep 17 00:00:00 2001
 From: Shawn Landden <shawnlandden@gmail.com>
 Date: Mon, 9 Jul 2012 15:53:25 -0700
-Subject: [PATCH 4/4] kfreebsd
+Subject: [PATCH 5/6] kfreebsd
 
 support kqueue on GNU/kFreeBSD
 

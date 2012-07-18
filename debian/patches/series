@@ -1,4 +1,7 @@
-doc-index.html.patch
-configure-disable-march-native-agressive-m64.patch
-configure-GNU-kFreeBSD-and-disable-rpath.patch
-kfreebsd.patch
+0001-configure-generate-from-source.patch
+0002-doc-index.html.patch
+0003-configure-disable-march-native-agressive-m64.patch
+0004-configure-GNU-kFreeBSD-and-disable-rpath.patch
+0005-kfreebsd.patch
+0006-configure-use-pkg-config-macros-instead-of-calling-d.patch
+

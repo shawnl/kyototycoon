@@ -1,32 +1,15 @@
-From 2aa99c93a4de6b0c6d1aabcf04a09f4cd3c8e512 Mon Sep 17 00:00:00 2001
+From 08ead36132b44ab1a763fdb2f1313f4d2beae0ca Mon Sep 17 00:00:00 2001
 From: Shawn Landden <shawnlandden@gmail.com>
 Date: Tue, 3 Jul 2012 12:54:54 -0700
-Subject: [PATCH 3/4] configure: GNU/kFreeBSD and disable -rpath
+Subject: [PATCH 4/6] configure: GNU/kFreeBSD and disable -rpath
 
 use --as-needed on GNU/kFreeBSD as well as Linux
 
 also, disable -rpath on Linux
 ---
- configure    |    4 ++--
  configure.in |    4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/configure b/configure
-index 9f88474..5f0e0ff 100755
---- a/configure
-+++ b/configure
-@@ -4533,9 +4533,9 @@ then
- fi
- 
- # As-needed linking
--if uname | grep Linux >config.tmp
-+if uname -o | egrep "GNU/Linux|GNU/kFreeBSD" >config.tmp
- then
--  MYLDFLAGS="$MYLDFLAGS -Wl,-rpath-link,.:/usr/local/lib:$MYLDLIBPATH"
-+#  MYLDFLAGS="$MYLDFLAGS -Wl,-rpath-link,.:/usr/local/lib:$MYLDLIBPATH"
-   MYLDFLAGS="$MYLDFLAGS -Wl,--as-needed"
- else
-   MYCMDLIBS="$MYCMDLIBS $LIBS"
 diff --git a/configure.in b/configure.in
 index c11de95..ba9a775 100644
 --- a/configure.in

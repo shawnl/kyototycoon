@@ -1,0 +1,40 @@
+From fedabec741369ebe8bffec646673ba3095e4fa8c Mon Sep 17 00:00:00 2001
+From: Shawn Landden <shawnlandden@gmail.com>
+Date: Wed, 18 Jul 2012 11:26:07 -0700
+Subject: [PATCH 6/6] configure: use pkg-config macros instead of calling
+ directly
+
+---
+ configure.in |   15 ++++-----------
+ 1 file changed, 4 insertions(+), 11 deletions(-)
+
+diff --git a/configure.in b/configure.in
+index ba9a775..f4a71fd 100644
+--- a/configure.in
++++ b/configure.in
+@@ -273,18 +273,11 @@ else
+   MYCMDLIBS="$MYCMDLIBS $LIBS"
+ fi
+ 
++# This makes sure pkg.m4 is available.
++m4_pattern_forbid([^_?PKG_[A-Z_]+$],[*** pkg.m4 missing, please install pkg-config])
++
+ # Checking the version of Kyoto Cabinet with pkg-config
+-if type pkg-config >config.tmp 2>&1
+-then
+-  printf 'checking Kyoto Cabinet by pkg-config... '
+-  if pkg-config --atleast-version=1.2.65 kyotocabinet
+-  then
+-    printf 'yes\n'
+-  else
+-    printf 'no\n'
+-    AC_MSG_ERROR([required version of Kyoto Cabinet was not detected])
+-  fi
+-fi
++PKG_CHECK_MODULES(KYOTOCABINET, [kyotocabinet >= 1.2.65])
+ 
+ # Shared libraries
+ if test "$enable_shared" != "no" && test "$enable_profile" != "yes"
+-- 
+1.7.9.5
+

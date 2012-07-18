@@ -6,6 +6,8 @@ CONFIG_OPTS += --disable-opt
 endif
 
 override_dh_auto_configure:
+	aclocal
+	autoconf2.64
 	dh_auto_configure -- \
 --enable-lua \
 --prefix=/usr \
@@ -29,12 +31,14 @@ override_dh_installchangelogs:
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz -z2
+	# so it gets restored to original when patch that removes it gets unapplied
+	rm -rf configure
 
 override_dh_makeshlibs:
 	dh_makeshlibs -V
 
 override_dh_clean:
-	dh_clean config.tmp config.log
+	dh_clean config.tmp config.log aclocal.m4
 
 %:
 	dh $@
