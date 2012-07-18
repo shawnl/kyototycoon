@@ -23,7 +23,7 @@ override_dh_strip:
 
 override_dh_installdocs:
 	dh_installdocs --link-doc=libkyototycoon2
-	# debhelper sometimes leaves this empty folder
+	# debhelper sometimes leaves this empty folder - Bug #679864
 	rm -rf $$(pwd)/debian/kyototycoon-doc/usr/share/doc/libkyototycoon2
 
 override_dh_installchangelogs:
@@ -39,6 +39,8 @@ override_dh_makeshlibs:
 
 override_dh_clean:
 	dh_clean config.tmp config.log aclocal.m4
+	# work around bug #682025 (quilt does not restore permissions, leading dpkg-source to complain)
+	-chmod -f +x configure
 
 %:
 	dh $@
