@@ -76,7 +76,7 @@ Section: debug
 Architecture: any
 Depends: kyototycoon (= ${binary:Version}), libkyototycoon2 (= ${binary:Version}), ${misc:Depends}
 Provides: libkyototycoon-dbg, libkyototycoon2-dbg
-Multi-Arch: foreign
+Multi-Arch: allowed
 Priority: extra
 Description: Handy cache/storage server - debugging symbols
  Kyoto Tycoon is a lightweight database server with auto expiration
