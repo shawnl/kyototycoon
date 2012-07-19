@@ -4,12 +4,14 @@ Priority: optional
 Maintainer: Shawn Landden <shawnlandden@gmail.com>
 Build-Depends: debhelper (>= 9),
  dpkg-dev (>= 1.16.1),
- libkyotocabinet-dev,
  automake,
  autoconf2.64,
  libtool (>= 2.2),
- liblua5.1-0-dev,
+ libkyotocabinet-dev,
+# this is used solely to get the version of lua to build against
+# so must match -dev—luadoc also can recompile docs (not done by default)
  lua5.1,
+ liblua5.1-0-dev,
  zlib1g-dev,
  liblzma-dev,
  liblzo2-dev
@@ -23,9 +25,9 @@ Homepage: http://fallabs.com/kyototyrant/
 Package: libkyototycoon2
 Section: libs
 Architecture: any
+Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Multi-Arch: same
 Description: Handy cache/storage server - shared library
  Kyoto Tycoon is a lightweight database server with auto expiration
  mechanism, which is useful to handle cache data and persistent data
@@ -42,9 +44,9 @@ Description: Handy cache/storage server - shared library
  
 Package: kyototycoon
 Architecture: any
+Multi-Arch: foreign
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: kyototycoon-doc
-Multi-Arch: foreign
 Description: Handy cache/storage server
  Kyoto Tycoon is a lightweight database server with auto expiration
  mechanism, which is useful to handle cache data and persistent data
@@ -74,9 +76,9 @@ Description: Handy cache/storage server
 Package: kyototycoon-dbg
 Section: debug
 Architecture: any
+Multi-Arch: allowed
 Depends: kyototycoon (= ${binary:Version}), libkyototycoon2 (= ${binary:Version}), ${misc:Depends}
 Provides: libkyototycoon-dbg, libkyototycoon2-dbg
-Multi-Arch: allowed
 Priority: extra
 Description: Handy cache/storage server - debugging symbols
  Kyoto Tycoon is a lightweight database server with auto expiration
@@ -114,10 +116,10 @@ Description: Handy cache/storage server - documentation
 
 Package: libkyototycoon-dev
 Section: libdevel
-Multi-Arch: same
 Architecture: any
-Suggests: kyototycoon
+Multi-Arch: same
 Depends: libkyototycoon2 (= ${binary:Version}), ${misc:Depends}
+Suggests: kyototycoon
 Provides: libkyototycoon2-dev
 Description: Handy cache/storage server - development headers
  Kyoto Tycoon is a lightweight database server with auto expiration
