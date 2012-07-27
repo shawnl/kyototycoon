@@ -298,7 +298,7 @@ class RemoteDB {
       RPCClient::ReturnValue rv = db_->rpc_.call("cur_get_key", &inmap, &outmap);
       if (rv != RPCClient::RVSUCCESS) {
         db_->set_rpc_error(rv, outmap);
-        return false;
+        return NULL;
       }
       size_t ksiz;
       const char* kbuf = strmapget(outmap, "key", &ksiz);
@@ -350,7 +350,7 @@ class RemoteDB {
       RPCClient::ReturnValue rv = db_->rpc_.call("cur_get_value", &inmap, &outmap);
       if (rv != RPCClient::RVSUCCESS) {
         db_->set_rpc_error(rv, outmap);
-        return false;
+        return NULL;
       }
       size_t vsiz;
       const char* vbuf = strmapget(outmap, "value", &vsiz);
@@ -411,7 +411,7 @@ class RemoteDB {
         *ksp = 0;
         *vbp = NULL;
         *vsp = 0;
-        return false;
+        return NULL;
       }
       size_t ksiz = 0;
       const char* kbuf = strmapget(outmap, "key", &ksiz);
@@ -481,7 +481,7 @@ class RemoteDB {
       RPCClient::ReturnValue rv = db_->rpc_.call("cur_seize", &inmap, &outmap);
       if (rv != RPCClient::RVSUCCESS) {
         db_->set_rpc_error(rv, outmap);
-        return false;
+        return NULL;
       }
       size_t ksiz = 0;
       const char* kbuf = strmapget(outmap, "key", &ksiz);
